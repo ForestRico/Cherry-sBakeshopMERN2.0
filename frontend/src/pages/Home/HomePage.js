@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from 'react';
 import { getAll, search } from "../../services/foodService";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
 import { useParams } from 'react-router-dom';
+import Search from '../../components/Search/Search';
 
 
 // The `initialState` variable is an object with a `foods` property set to an empty array. This represents the initial state of our component.
@@ -41,6 +42,7 @@ export default function HomePage() {
 
   return (
   <>
+    <Search />
     <Thumbnails foods={foods} />
   </>
   );
