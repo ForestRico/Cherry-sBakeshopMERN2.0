@@ -4,6 +4,7 @@ import Thumbnails from "../../components/Thumbnails/Thumbnails";
 import { useParams } from 'react-router-dom';
 import Search from '../../components/Search/Search';
 import Tags from '../../components/Tags/Tags';
+import NotFound from '../../components/NotFound/NotFound';
 
 
 // The `initialState` variable is an object with a `foods` property set to an empty array. This represents the initial state of our component.
@@ -54,6 +55,8 @@ export default function HomePage() {
   <>
     <Search />
     <Tags tags={tags} />
+  {/* ***** REVISE THIS *****  */}
+    {foods.length === 0 && <NotFound/>} 
     <Thumbnails foods={foods} />
   </>
   );
