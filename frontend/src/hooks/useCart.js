@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { sample_foods } from "../data";
 
 const CartContext = createContext(null)
@@ -11,6 +11,20 @@ export default function CartProvider({ children }) {
     );
     const [totalPrice, setTotalPrice] = useState(40);
     const [totalCount, setTotalCount] = useState(3);
+// **** REVISE CODE *****
+    useEffect(() => {
+      const totalPrice = sum(cartItems.map(item => item.price));
+      const totalCount = sum(cartItems.map(item => item.quantity));
+      setTotalPrice(totalPrice);
+      setTotalCount(totalCount);
+
+    }, [cartItems]);
+
+    const sum = items => {
+      return items.reduce((prevValue, curValue) => prevValue + curValue, 0);
+    };
+
+
 // Here we are filtering all the food items and returning everything but the food id. (Removing the food id from the filteredcartitems)
     const removeFromCart = foodId => {
       const filteredCartItems = cartItems.filter(item => item.food.id !== foodId);
@@ -28,15 +42,24 @@ export default function CartProvider({ children }) {
 // ***** REVISE CODE ******
     setCartItems(
       cartItems.map(item => item.food.id === food.id? changedCartItem : item)
-    )
-  }
+    );
+  };
 
+  const addToCart = food => {
+    const cartItem = cartItems.find(item => item.food.id === food.id);
+    if (cartItem) {
+      changeQuantity(cartItem, cartItem.quantity + 1);
+    } else {
+      setCartItems([...cartItems, { food, quantity: 1, price: food.price }]);
+    }
+  };
 
   return ( 
     <CartContext.Provider 
         value={{ cart: { items: cartItems, totalPrice, totalCount }, 
         removeFromCart, 
         changeQuantity,
+        addToCart,
       }}
     >
         {children}
