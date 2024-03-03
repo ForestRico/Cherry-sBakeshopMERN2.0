@@ -11,10 +11,15 @@ export default function CartProvider({ children }) {
     );
     const [totalPrice, setTotalPrice] = useState(40);
     const [totalCount, setTotalCount] = useState(3);
+// Here we are filtering all the food items and returning everything but the food id. (Removing the food id from the filteredcartitems)
+    const removeFromCart = foodId => {
+      const filteredCartItems = cartItems.filter(item => item.food.id !== foodId);
+      setCartItems(filteredCartItems);
+    };
 
   return ( 
     <CartContext.Provider 
-        value={{ cart: { items: cartItems, totalPrice, totalCount } }}
+        value={{ cart: { items: cartItems, totalPrice, totalCount }, removeFromCart, }}
     >
         {children}
     </CartContext.Provider>
