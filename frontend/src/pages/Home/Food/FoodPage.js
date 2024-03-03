@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getByID } from "../../../services/foodService";
 import StarRating from "../../../components/StarRating/StarRating";
 import Tags from "../../../components/Tags/Tags";
+import Price from "../../../components/Price/Price";
 
 
 
@@ -54,6 +55,18 @@ export default function FoodPage() {
                                 />
                             )}
                         </div>
+
+                        <div className={classes.cook_time}>
+                            <span>
+                                Time to prepare from scratch <strong>{food.cookTime}</strong> minutes
+                            </span>
+                        </div>
+
+                        <div className={classes.price}>
+                            <Price price={food.price}/>
+                        </div>
+
+                        <button>Add To Cart</button>
                 </div>
             </div>
         )}
