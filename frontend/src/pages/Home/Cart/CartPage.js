@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Price from "../../../components/Price/Price";
 
 export default function CartPage() {
-    const { cart, removeFromCart } = useCart();
+    const { cart, removeFromCart, changeQuantity } = useCart();
     return (
         <>
             <Title title="Cart Page" margin="1.5rem 0 0 2.5rem" />
@@ -23,7 +23,7 @@ export default function CartPage() {
                             </div>
 
                             <div>
-                                <select value={item.quantity} >
+                                <select value={item.quantity} onChange={e => changeQuantity(item, e.target.value)}>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
