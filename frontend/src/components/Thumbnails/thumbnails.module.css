@@ -55,7 +55,7 @@
     align-items: flex-start;
   }
   
-  .origins span {
+  .ingredients span {
     border-radius: 2rem;
     background-color: whitesmoke;
     display: inline-block;
@@ -66,7 +66,7 @@
     margin-top: 0.2rem;
   }
   
-  .origins {
+  .ingredients {
     flex: 9;
   }
   

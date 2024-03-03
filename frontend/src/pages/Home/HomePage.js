@@ -1,18 +1,21 @@
 import React, { useEffect, useReducer } from 'react';
-import { getAll, search } from "../../services/foodService";
+import { getAll, getAllByTags, getAllTags, search } from "../../services/foodService";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
 import { useParams } from 'react-router-dom';
 import Search from '../../components/Search/Search';
+import Tags from '../../components/Tags/Tags';
 
 
 // The `initialState` variable is an object with a `foods` property set to an empty array. This represents the initial state of our component.
-const initialState = { foods: [] };
+const initialState = { foods: [], tags: [] };
 
 // The `reducer` function takes the current `state` and an `action` as input and returns a new state based on the action. It updates the state based on the action type. In this case, it listens for the 'FOODS_LOADED' action type and updates the `foods` property of the state with the payload from the action.
 const reducer = (state, action) => {
   switch (action.type) {
     case 'FOODS_LOADED':
       return { ...state, foods: action.payload};
+    case 'TAGS_LOADED':
+      return { ...state, tags: action.payload};
       default: 
       return state;
   }
@@ -20,8 +23,8 @@ const reducer = (state, action) => {
 
 export default function HomePage() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { foods } = state;
-  const { searchTerm } = useParams();
+  const { foods, tags } = state;
+  const { searchTerm, tag } = useParams();
   // ***** EXPLANATION REQUIRED HERE *****
 
 // The `useEffect` hook is used to perform side effects in the component. In this case, it fetches data asynchronously using the `getAll` function (not defined in the provided code) when the component mounts (`[]` dependency array indicates it should only run once). Once the data is fetched, it dispatches a 'FOODS_LOADED' action with the fetched foods as the payload.
@@ -33,9 +36,16 @@ export default function HomePage() {
 
   // Here we created a constant that checks if the searchTerm is available, ifso it then uses the search() function found in foodService, otherwise it uses 'getAll' to load the food
   useEffect(() => {
-    const loadFoods = searchTerm ? search(searchTerm) : getAll();
+    getAllTags().then(tags => dispatch ({ type: 'TAGS_LOADED', payload: tags}))
+
+    const loadFoods = tag
+    ? getAllByTags(tag)
+    : searchTerm 
+    ? search(searchTerm) 
+    : getAll();
+
     loadFoods.then(foods => dispatch({ type: 'FOODS_LOADED', payload: foods }));
-  }, [searchTerm]);
+  }, [searchTerm, tag]);
   
 
   // An Empty array means the function will be called once to the HomePage
@@ -43,6 +53,7 @@ export default function HomePage() {
   return (
   <>
     <Search />
+    <Tags tags={tags} />
     <Thumbnails foods={foods} />
   </>
   );

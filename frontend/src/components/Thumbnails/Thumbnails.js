@@ -31,8 +31,8 @@ export default function Thumbnails({ foods }) {
                 <StarRating stars={food.stars} />
               </div>
               <div className={classes.product_item_footer}>
-                <div className={classes.origins}>
-                  {food.origins.map(origin => (
+                <div className={classes.ingredients}>
+                  {food.ingredients.map(origin => (
                     <span key={origin}>{origin}</span>
                   ))}
                 </div>
