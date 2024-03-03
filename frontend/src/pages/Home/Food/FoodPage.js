@@ -22,6 +22,19 @@ export default function FoodPage() {
                     src={`/foods/${food.imageUrl}`}
                     alt={food.name}
                 />
+
+                <div className={classes.details}>
+                    <div className={classes.header}>
+                        <span className={classes.name}>{food.name}</span>
+                        <span
+                            className={`${classes.favourite}} ${
+                                food.favourite ? '' : classes.not
+                            }`}
+                        >
+                            ❤️
+                        </span>
+                    </div>
+                </div>
             </div>
         )}
     </>
