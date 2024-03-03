@@ -13,6 +13,17 @@ export default function FoodPage() {
     useEffect(() => {
         getByID(id).then(setFood);
     }, [id]);
-
-  return <div>FoodPage</div>;
+  return ( 
+    <>
+        { food && (
+            <div className={classes.container}>
+                <img
+                    className={classes.image}
+                    src={`/foods/${food.imageUrl}`}
+                    alt={food.name}
+                />
+            </div>
+        )}
+    </>
+  );  
 }
