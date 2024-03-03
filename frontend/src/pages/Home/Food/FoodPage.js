@@ -6,6 +6,7 @@ import StarRating from "../../../components/StarRating/StarRating";
 import Tags from "../../../components/Tags/Tags";
 import Price from "../../../components/Price/Price";
 import { useCart } from "../../../hooks/useCart";
+import NotFound from "../../../components/NotFound/NotFound";
 
 
 
@@ -25,7 +26,9 @@ export default function FoodPage() {
     }, [id]);
   return ( 
     <>
-        { food && (
+{/* if food is not available, error message will pop up  */}
+        {!food? (<NotFound message='Food Unavailable!' linkText="Back To Home"/>
+        ) : (
             <div className={classes.container}>
                 <img
                     className={classes.image}

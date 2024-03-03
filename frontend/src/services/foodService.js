@@ -1,4 +1,4 @@
-import { sample_foods, sample_tags } from "../data";
+import { sample_foods, sample_tags } from "../../../backend/src/data";
 
 export const getAll = async () => sample_foods;
 
