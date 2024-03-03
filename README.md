@@ -5,3 +5,4 @@ This MERN app for my family bakeshop lets customers view, order, pay online, and
 To Fix: 
 - Dollar Sign for Thumbnails. 
 - Tags on Foods
+- Add Comment Descriptions to ./hooks/useCart.js
