@@ -2,8 +2,8 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 // **** REVISE THIS CODE *****
 const CartContext = createContext(null);
-const CART_KEY = 'cart';
-const EMPTY_CART = {
+const CART_KEY = 'cart';  // defines a constant 'CART_KEY' with the value 'cart' which will be used as the key for storing the cart data in the browsers local storage
+const EMPTY_CART = { // Defines an object 'EMPTY_CART' with properties for items, total price and total count.
   items: [],
   totalPrice: 0,
   totalCount: 0,
