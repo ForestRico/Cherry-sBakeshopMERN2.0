@@ -16,7 +16,7 @@ router.get('/tags', (req, res) => {
 // Search Food Route
 router.get('/search/:searchTerm', (req, res) => {
     const { searchTerm } = req.params;
-// Using same search function from foodService.js
+// // this function takes the 'searchTerm' as input, then attempts to filter the 'sample_foods' from the data and searches for a name that matches the 'searchTerm' .toLowerCase() makes the data and searchTerm caseinsensitive.
     const foods = sample_foods.filter(item =>
         item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
