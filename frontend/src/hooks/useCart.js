@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { sample_foods } from "../../../backend/src/data";
+
 // **** REVISE THIS CODE *****
 const CartContext = createContext(null);
 const CART_KEY = 'cart';
