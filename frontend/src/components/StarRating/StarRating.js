@@ -21,7 +21,6 @@ function Star({number}) {
     );
 }
 
-
 return ( 
     <div className={classes.rating}>
       {[1, 2, 3, 4, 5].map(number => (
@@ -30,6 +29,7 @@ return (
     </div>
   );
 }
+
 
 StarRating.defaultProps = {
     size: 18,
