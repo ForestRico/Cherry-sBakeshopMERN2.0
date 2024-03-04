@@ -16,19 +16,15 @@ export default function Header() {
                 </Link>
                 <nav>
                     <ul>
-                        {/* Link to Profile page */}
                         <li>
                             <Link to="/profile">Profile</Link>
                         </li>
-                        {/* Link to Orders page */}
                         <li>
                             <Link to="/orders">Orders</Link>
                         </li>
-                        {/* Logout */}
                         <li>
                             <a onClick={logout}>Logout</a>
                         </li>
-                        {/* Link to Cart */}
                         <li>
                             <Link to="/cart">
                                 Cart
