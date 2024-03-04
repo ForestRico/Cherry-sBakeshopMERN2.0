@@ -17,13 +17,13 @@ export default function Header() {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/profile">Profile</Link>
+                            <Link to="/about us">About Us</Link>
                         </li>
                         <li>
-                            <Link to="/orders">Orders</Link>
+                            <Link to="/faq">FAQ</Link>
                         </li>
                         <li>
-                            <a onClick={logout}>Logout</a>
+                            <Link to="/log in">Log In</Link>
                         </li>
                         <li>
                             <Link to="/cart">
