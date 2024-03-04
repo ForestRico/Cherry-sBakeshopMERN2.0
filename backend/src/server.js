@@ -7,7 +7,6 @@ const app = express();
 // Since we're using 'req.body' and want to send our data to the server as JSON, we need to tell express to use JSON as the body
 // This code parses JSON body
 app.use(express.json());
-
 app.use(cors({
     credentials:true,
     origin: ['http://localhost:3000'],

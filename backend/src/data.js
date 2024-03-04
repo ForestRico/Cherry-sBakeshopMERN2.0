@@ -167,3 +167,23 @@ export const sample_tags = [
     {name: 'Lunch', count: 4},
     {name: 'Hot Food', count: 4},
 ];
+
+export const sample_user = [
+    {
+        id: 1, 
+        name: 'Laurence Rico',
+        email: 'laurencericoo@gmail.com',
+        password: '123',
+        address: 'Deanside',
+        isAdmin: true,
+    },
+    {
+        id: 2,
+        name: 'Wolf Blitzer',
+        email: 'Blitzer@gmail.com',
+        password: '123',
+        address: 'Braybrook',
+        isAdmin: false,
+
+    },
+];
