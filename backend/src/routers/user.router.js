@@ -41,4 +41,6 @@ const generateTokenResponse = user => {
         isAdmin: user.isAdmin,
         token,
     };
-}
+};
+
+export default router;
