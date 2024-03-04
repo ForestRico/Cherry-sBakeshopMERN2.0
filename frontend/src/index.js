@@ -18,22 +18,24 @@ root.render(
         <CartProvider>
           <App />
           <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closerOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closerOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
           />
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
+
+//ToastContainer: positioned bottom-right, autoclose 5000 miliseconds, 
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

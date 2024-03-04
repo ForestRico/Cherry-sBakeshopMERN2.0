@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { sample_user } from '../data';
-import { BAD_REQUEST } from '../constants/httpStatus';
+import { sample_user } from '../data.js';
+import { BAD_REQUEST } from '../constants/httpStatus.js';
 
 const router = Router ();
 
