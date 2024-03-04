@@ -6,3 +6,5 @@ To Fix:
 - Dollar Sign for Thumbnails. 
 - Tags on Foods
 - Add Comment Descriptions to ./hooks/useCart.js
+
+- Create dependencies file
