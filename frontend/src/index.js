@@ -6,36 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import CartProvider from './hooks/useCart';
 import './axiosConfig';
-import { AuthProvider } from './hooks/useAuth';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { AuthProvider } from './hooks/useAuth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
+      {/* <AuthProvider> */}
         <CartProvider>
           <App />
-          <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closerOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
         </CartProvider>
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </BrowserRouter>
   </React.StrictMode>
 );
 
-//ToastContainer: positioned bottom-right, autoclose 5000 miliseconds, 
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

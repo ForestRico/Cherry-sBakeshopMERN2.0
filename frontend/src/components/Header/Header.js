@@ -16,7 +16,7 @@ export default function Header() {
         <header className={classes.header}>
             <div className={classes.container}>
                 <Link to="/" className={classes.logo}>
-                    Food Mine!
+                    Cherry's Bakeshop
                 </Link>
                 <nav>
                   <ul>

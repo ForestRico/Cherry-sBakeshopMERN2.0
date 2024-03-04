@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import classes from './foodPage.module.css'
 import { useNavigate, useParams } from "react-router-dom";
-import { getByID } from "../../../services/foodService";
-import StarRating from "../../../components/StarRating/StarRating";
-import Tags from "../../../components/Tags/Tags";
-import Price from "../../../components/Price/Price";
-import { useCart } from "../../../hooks/useCart";
-import NotFound from "../../../components/NotFound/NotFound";
+import { getByID } from "../../services/foodService";
+import StarRating from "../../components/StarRating/StarRating";
+import Tags from "../../components/Tags/Tags";
+import Price from "../../components/Price/Price";
+import { useCart } from "../../hooks/useCart";
+import NotFound from "../../components/NotFound/NotFound";
 
 
 

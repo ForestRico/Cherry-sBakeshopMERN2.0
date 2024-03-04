@@ -1,10 +1,10 @@
 import React from "react";
 import classes from './cartPage.module.css';
-import { useCart } from "../../../hooks/useCart";
-import Title from "../../../components/Title/Title";
+import { useCart } from "../../hooks/useCart";
+import Title from "../../components/Title/Title";
 import { Link } from "react-router-dom";
-import Price from "../../../components/Price/Price";
-import NotFound from "../../../components/NotFound/NotFound";
+import Price from "../../components/Price/Price";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default function CartPage() {
     const { cart, removeFromCart, changeQuantity } = useCart();
@@ -65,7 +65,7 @@ export default function CartPage() {
                             </div>
                         </div>
 
-                        <Link to="/checkout">Proceed To Checkout</Link>
+                        <Link to="/checkout">Proceed To Order Fulfillment</Link>
                     </div>
                 </div>
             )}
