@@ -2,6 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import foodRouter from './routers/food.router.js';
 import userRouter from './routers/user.router.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
+// Loads up the value of the node environment (should be development)
+console.log(process.env.NODE_ENV)
+
 
 const app = express();
 // Since we're using 'req.body' and want to send our data to the server as JSON, we need to tell express to use JSON as the body

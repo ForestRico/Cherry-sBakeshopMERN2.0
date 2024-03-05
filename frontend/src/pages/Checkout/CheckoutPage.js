@@ -37,7 +37,10 @@ export default function CheckoutPage() {
                             </div>
                         </li>
              
-            </ul>
+                </ul>
+            </div>
+            <div className={classes.submissionbox}>
+                    
             </div>
         </>
         );
