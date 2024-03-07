@@ -65,7 +65,7 @@ export default function CartPage() {
                             </div>
                         </div>
 
-                        <Link to="/checkout">Proceed To Order Fulfillment</Link>
+                        <Link to="/form">Proceed To Order Fulfillment</Link>
                     </div>
                 </div>
             )}

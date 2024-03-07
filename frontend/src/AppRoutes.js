@@ -3,7 +3,7 @@ import HomePage from './pages/Home/HomePage';
 import FoodPage from './pages/Food/FoodPage';
 import CartPage from './pages/Cart/CartPage';
 // import LoginPage from './pages/Login/LoginPage';
-import CheckoutPage from './pages/Checkout/CheckoutPage';
+import FormPage from './pages/Form/FormPage';
 
 export default function AppRoutes() {
   return (
@@ -14,7 +14,7 @@ export default function AppRoutes() {
       <Route path="/food/:id" element={<FoodPage/>} />
       <Route path="/cart" element={<CartPage/>} />
       {/* <Route path="/login" element={<LoginPage/>} /> */}
-      <Route path="/checkout" element={<CheckoutPage/>} />    
+      <Route path="/form" element={<FormPage/>} />    
     </Routes>
   )
 }

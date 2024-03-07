@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import classes from './checkoutPage.module.css'
+import classes from './formPage.module.css'
 import Title from "../../components/Title/Title";
 import { useCart } from "../../hooks/useCart";
 import { Link } from "react-router-dom";
 import Price from "../../components/Price/Price";
 
-export default function CheckoutPage() {
+export default function FormPage() {
     const { cart } = useCart();
     const [formData, setFormData] = useState({
         name: "",
@@ -63,7 +63,11 @@ export default function CheckoutPage() {
                             </li>
                         ))}
                         <li>
-                            {/* Render total price */}
+                            <li>
+                                <div className={classes.food_total_price}>
+                                Total Price: $    <Price price={cart.totalPrice} />
+                                </div>
+                            </li>
                         </li>
                     </ul>
                 
