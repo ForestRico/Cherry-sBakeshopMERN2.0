@@ -20,3 +20,13 @@ Changes According to Client (Family)
 
 BackEnd Notes: 
 * Add Middleware? for MongoDB
+
+MongoDB: 
+
+mongosh "mongodb+srv://bakeshopadmin:bakeshoppassword123@cluster0.qzdcnro.mongodb.net/BakeshopDB?retryWrites=true&w=majority"
+
+show dbs
+show collections
+db.form.find()
+db.dropDatabase()
+

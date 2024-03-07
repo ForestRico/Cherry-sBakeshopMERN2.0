@@ -1,13 +1,13 @@
-// formSchema.js
 import mongoose from 'mongoose';
 
 const formSchema = new mongoose.Schema({
-    id: String,
     email: String,
+    occassion: String,
     first_name: String,
     last_name: String,
-    pickUp_date: String,
-    pickUp_time: String,
+    message: String,
+    pickup_date: String,
+    pickup_time: String,
     phone_number: String,
 });
 

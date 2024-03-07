@@ -1,10 +1,9 @@
-// seed.js
 import mongoose from 'mongoose';
 import connectDB from '../config/dbConn.js';
 import Form from '../models/formSchema.js';
 import dotenv from 'dotenv';
-dotenv.config();
 
+dotenv.config();
 
 connectDB().then(async () => {
     console.log("Creating Seed Data!");

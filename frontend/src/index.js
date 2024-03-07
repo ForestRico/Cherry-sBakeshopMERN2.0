@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import CartProvider from './hooks/useCart';
 import './axiosConfig';
+
 // import { AuthProvider } from './hooks/useAuth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
