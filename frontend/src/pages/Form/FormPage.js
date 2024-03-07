@@ -9,16 +9,16 @@ import Price from "../../components/Price/Price";
 export default function FormPage() {
     const { cart } = useCart();
     const [formData, setFormData] = useState({
-        name: "",
         email: "",
         address: "",
-        typeOfOccasion: "",
+        occasion: "",
         firstName: "",
         lastName: "",
         message: "",
         pickUpDate: "",
         pickUpTime: "",
-        phoneNumber: ""
+        phoneNumber: "",
+        items: [] // Array to store food item details
     });
 
     const handleChange = (e) => {
@@ -28,8 +28,11 @@ export default function FormPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // Add food item details to formData
+            const updatedFormData = { ...formData, items: cart.items };
+            
             // sends form data to the backend
-            const response = await axios.post("/api/orders", formData);
+            const response = await axios.post("/api/orders", updatedFormData);
             console.log(response.data);
             // Display confirmation message or redirect to a thank you page
         } catch (error) {
@@ -72,97 +75,9 @@ export default function FormPage() {
                     </ul>
                 
                     <div className={classes.submissionbox}>
-                        <div className={classes.occasion}>
-                            <label htmlFor="typeOfOccasion">Any Occasion?</label>
-                            <input
-                                type="text"
-                                name="typeOfOccasion"
-                                id="typeOfOccasion"
-                                value={formData.typeOfOccasion}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={classes.email_container}>
-                            <label htmlFor="email">Email Address</label>
-                            <input
-                                className={classes.emailinput}
-                                type="text"
-                                name="email"
-                                id="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={classes.first_name_container}>
-                            <div className={classes.first_name}>
-                                <label htmlFor="firstName">First Name</label>
-                                <input
-                                    className={classes.firstinput}
-                                    type="text"
-                                    name="firstName"
-                                    id="firstName"
-                                    value={formData.firstName}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={classes.last_name_container}>
-                                <label htmlFor="lastName">Last Name</label>
-                                <input
-                                    className={classes.lastinput}
-                                    type="text"
-                                    name="lastName"
-                                    id="lastName"
-                                    value={formData.lastName}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className={classes.message}>
-                            <label htmlFor="message">Notes</label>
-                            <textarea
-                                className={classes.messageinput}
-                                name="message"
-                                id="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={classes.completepickup}>
-                            <div className={classes.pickupevent}>
-                                <label htmlFor="pickUpDate">Date of Pick Up</label>
-                                <input
-                                    className={classes.dateinput}
-                                    type="date"
-                                    name="pickUpDate"
-                                    id="pickUpDate"
-                                    value={formData.pickUpDate}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={classes.time}>
-                                <label htmlFor="pickUpTime">Time of Pick Up</label>
-                                <input
-                                    className={classes.timeinput}
-                                    type="time"
-                                    name="pickUpTime"
-                                    id="pickUpTime"
-                                    value={formData.pickUpTime}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className={classes.phone}>
-                            <label htmlFor="phoneNumber">Phone Number</label>
-                            <input
-                                type="text"
-                                name="phoneNumber"
-                                id="phoneNumber"
-                                value={formData.phoneNumber}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <button type="submit">Submit Order</button>
+                        {/* Remaining form fields */}
                     </div>
+                    <button type="submit">Submit Order</button>
                 </form>
             </div>
         </>
