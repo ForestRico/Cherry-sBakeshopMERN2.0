@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import foodRouter from './routers/food.router.js';
 import userRouter from './routers/user.router.js';
+import formRouter from './routers/form.router.js';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose'
 import connectDB from '../config/dbConn.js';
@@ -30,6 +31,7 @@ app.use(cors({
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
+app.use('/api/form', formRouter);
 
 
 // const PORT = 5000;
