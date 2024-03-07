@@ -10,9 +10,29 @@ import { model, Schema } from 'mongoose';
 //         type: String,
 //         required: true
 //     },
+//     roles: [{
+//         type: String,
+//         default: "Employee"
+//     }],
+//     active: {
+//         type: Boolean,
+//         default: true
+//     },
 // })
 
-export const userSchema = new Schema({
+// module.exports = mongoose.model('User', userSchema)
+
+const userSchema = new Schema({
     username: String,
     password: String,
+    roles: [{
+        type: String,
+        default: "Employee"
+    }],
+    active: {
+        type: Boolean,
+        default: true
+    },
 });
+
+export { userSchema };

@@ -3,10 +3,17 @@ import cors from 'cors';
 import foodRouter from './routers/food.router.js';
 import userRouter from './routers/user.router.js';
 import dotenv from 'dotenv';
+import mongoose from 'mongoose'
+import connectDB from '../config/dbConn.js';
+// const connectDB = require('../config/dbConn.js').default;
+
+
 
 dotenv.config();
 // Loads up the value of the node environment (should be development)
 console.log(process.env.NODE_ENV)
+
+connectDB()
 
 
 const app = express();
@@ -25,7 +32,19 @@ app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 
 
+// const PORT = 5000;
+// app.listen(PORT, () => {
+//     console.log('listening on port' + PORT);
+// });
+
 const PORT = 5000;
-app.listen(PORT, () => {
-    console.log('listening on port' + PORT);
-});
+mongoose.connection.once('open', () => {
+    console.log('Connection to MongoDB Successful')
+    app.listen(PORT, () => console.log(`Server running on ${PORT}`))
+})
+
+mongoose.connection.on('error', err => {
+    console.log(err)
+    logEvents(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`,
+    'mongoErrLog.log')
+})
