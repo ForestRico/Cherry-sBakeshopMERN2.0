@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose';
+const AutoIncrement = require('mongoose-sequence')(mongoose)
 
 const orderSchema = new Schema(
     {
@@ -23,7 +24,13 @@ const orderSchema = new Schema(
     {
         timestamps: true
     }
-);
+)
+
+orderSchema.plugin(AutoIncrement, {
+    inc_field: 'ticket',
+    id: 'ticketNums',
+    start_seq: 500
+})
 
 export { orderSchema };
 

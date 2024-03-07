@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
 import FoodPage from './pages/Food/FoodPage';
 import CartPage from './pages/Cart/CartPage';
-import LoginPage from './pages/Login/LoginPage';
+// import LoginPage from './pages/Login/LoginPage';
 import CheckoutPage from './pages/Checkout/CheckoutPage';
 
 export default function AppRoutes() {
@@ -13,7 +13,7 @@ export default function AppRoutes() {
       <Route path="/tag/:tag" element={<HomePage/>} /> 
       <Route path="/food/:id" element={<FoodPage/>} />
       <Route path="/cart" element={<CartPage/>} />
-      <Route path="/login" element={<LoginPage/>} />
+      {/* <Route path="/login" element={<LoginPage/>} /> */}
       <Route path="/checkout" element={<CheckoutPage/>} />    
     </Routes>
   )

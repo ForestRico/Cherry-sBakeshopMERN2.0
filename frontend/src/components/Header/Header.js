@@ -6,7 +6,7 @@ import { useCart } from '../../hooks/useCart';
 export default function Header() {
     const { cart } = useCart();
 
-    const logout = () => {};
+    // const logout = () => {};
 
     return (
         <header className={classes.header}>
