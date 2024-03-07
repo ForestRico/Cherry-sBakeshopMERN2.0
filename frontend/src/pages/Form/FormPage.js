@@ -27,7 +27,7 @@ export default function FormPage() {
         e.preventDefault();
         try {
             // Send form data to the backend
-            const response = await axios.post("/api/form", formData);
+            const response = await axios.post("/form", formData);
             console.log(response.data);
             // Display confirmation message or redirect to a thank you page
         } catch (error) {

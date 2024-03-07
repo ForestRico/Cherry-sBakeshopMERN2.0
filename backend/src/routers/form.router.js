@@ -1,8 +1,11 @@
 import { Router } from 'express';
+import express from 'express';
 import Form from '../../models/formSchema.js';
 
 
 const router = Router();
+
+app.use('/form', formRouter);
 
 router.post('/form', async (req, res) => {
     try {
@@ -34,4 +37,5 @@ router.post('/form', async (req, res) => {
     }
 });
 
-export default router;
+module.exports = router;
+// export default router;
