@@ -1,15 +1,16 @@
 const express = require('express');
-const router = express.Router();
+const app = express; 
+app.use(express.json());
 
-// Middleware to parse JSON and urlencoded request bodies
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
+require('./db/connection');
+const Users = require('/Models/User');
 
-// Route handler for processing form submission
-router.post('/', (req, res) => {
-    console.log(req.body); // Log form data received from the frontend
-    // Process the form data and send response as needed
-    res.send('Form submission successful!');
-});
 
-module.exports = router;
+app.post("/", async(req,res)=>{
+    console.log("port Run");
+    let user = new Users(req.body);
+    let result = await user.save();
+    res.send(result);
+})
+
+app.listen(5000);
