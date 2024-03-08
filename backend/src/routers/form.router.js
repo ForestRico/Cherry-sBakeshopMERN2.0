@@ -28,7 +28,7 @@ const router = Router();
 //     }
 // });
 
-router.post('/order', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         // Extract form data from the request body
         const { email, address, occasion, firstName, lastName, message, pickUpDate, pickUpTime, phoneNumber } = req.body;
@@ -38,12 +38,12 @@ router.post('/order', async (req, res) => {
             email,
             address,
             occasion,
-            first_name,
-            last_name,
+            first_name: firstName,
+            last_name: lastName,
             message,
-            pickup_date,
-            pickup_time,
-            phone_number
+            pickup_date: pickUpDate,
+            pickup_time: pickUpTime,
+            phone_number: phoneNumber
         });
 
         // Save the form to the database
