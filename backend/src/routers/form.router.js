@@ -7,50 +7,56 @@ const router = Router();
 
 app.use('/form', formRouter);
 
-
-router.get('/form', async (req, res) => {
-    try {
-      // Fetch form data from the database
-      const forms = await Form.find();
-      
-      // Respond with the fetched forms
-      res.status(200).json({ success: true, forms: forms });
-    } catch (error) {
-      // Handle any errors and respond with an error message
-      console.error('Error fetching forms:', error);
-      res.status(500).json({ success: false, message: 'Failed to fetch forms' });
-    }
-  });
+// app.get('/', (req,res) => {
+//     res.status(200).send('<h1>hi<h1>')
+// })
 
 router.post('/form', async (req, res) => {
     try {
         // Extract form data from the request body
-        const { email, address, occasion, firstName, lastName, message, pickUpDate, pickUpTime, phoneNumber } = req.body;
+        const formData = req.body;
 
-        // Create a new form instance
-        const form = new Form({
-            email,
-            address,
-            occasion,
-            firstName,
-            lastName,
-            message,
-            pickUpDate,
-            pickUpTime,
-            phoneNumber
-        });
+        // Log the received data
+        console.log('Data received:', formData);
 
-        // Save the form to the database
-        const savedForm = await form.save();
-
-        // Respond with a success message and the saved form
-        res.status(201).json({ success: true, message: 'Your Form Was Submitted Successfully', form: savedForm });
+        // Respond with a success message
+        res.status(200).send('Data received successfully');
     } catch (error) {
         // Handle any errors and respond with an error message
-        console.error('Error submitting form:', error);
-        res.status(500).json({ success: false, message: 'Failed To Submit Form' });
+        console.error('Error receiving data:', error);
+        res.status(500).send('Failed to receive data');
     }
 });
+
+// router.post('/form', async (req, res) => {
+//     try {
+//         // Extract form data from the request body
+//         const { email, address, occasion, firstName, lastName, message, pickUpDate, pickUpTime, phoneNumber } = req.body;
+
+//         // Create a new form instance
+//         const form = new Form({
+//             email,
+//             address,
+//             occasion,
+//             firstName,
+//             lastName,
+//             message,
+//             pickUpDate,
+//             pickUpTime,
+//             phoneNumber
+//         });
+
+//         // Save the form to the database
+//         const savedForm = await form.save();
+
+//         // Respond with a success message and the saved form
+//         res.status(201).json({ success: true, message: 'Your Form Was Submitted Successfully', form: savedForm });
+//     } catch (error) {
+//         // Handle any errors and respond with an error message
+//         console.error('Error submitting form:', error);
+//         res.status(500).json({ success: false, message: 'Failed To Submit Form' });
+//     }
+// });
 
 module.exports = router;
 // export default router;
