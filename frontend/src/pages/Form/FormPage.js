@@ -24,10 +24,10 @@ export default function FormPage() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         try {
             // Send form data to the backend
-            const response = await axios.post("/form", formData);
+            const response = await axios.post("/api/form", formData);
             console.log(response.data);
             // Display confirmation message or redirect to a thank you page
         } catch (error) {
@@ -39,7 +39,7 @@ export default function FormPage() {
         <>
             <Title title="Order and Quote Form" margin="1.5rem 0 0 2.5rem" />
             <div className={classes.container}>
-                <form onSubmit={handleSubmit}>
+                {/* <form onSubmit={handleSubmit}> */}
                     <ul className={classes.list}>
                         {cart.items.map(item => (
                             <li key={item.food.id}>
@@ -154,9 +154,9 @@ export default function FormPage() {
                                 onChange={handleChange}
                             />
                         </div>
-                        <button type="submit">Submit Order</button>
+                        <button type="submit" onClick={handleSubmit}>Submit Order</button>
                     </div>
-                </form>
+                {/* </form> */}
             </div>
         </>
     );

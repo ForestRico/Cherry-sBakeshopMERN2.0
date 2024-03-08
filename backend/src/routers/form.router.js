@@ -7,6 +7,21 @@ const router = Router();
 
 app.use('/form', formRouter);
 
+
+router.get('/form', async (req, res) => {
+    try {
+      // Fetch form data from the database
+      const forms = await Form.find();
+      
+      // Respond with the fetched forms
+      res.status(200).json({ success: true, forms: forms });
+    } catch (error) {
+      // Handle any errors and respond with an error message
+      console.error('Error fetching forms:', error);
+      res.status(500).json({ success: false, message: 'Failed to fetch forms' });
+    }
+  });
+
 router.post('/form', async (req, res) => {
     try {
         // Extract form data from the request body
