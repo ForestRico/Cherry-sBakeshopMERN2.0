@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const formSchema = new mongoose.Schema({
     userID: String,
     email: String,
-    occassion: String,
+    occasion: String,
     first_name: String,
     last_name: String,
     message: String,
