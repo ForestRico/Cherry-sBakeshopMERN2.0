@@ -7,13 +7,14 @@ import { Outlet } from "react-router-dom";
 
 const links = ['Forms']
 
-export default function AdminPage() {
-
-    return (
-        <>
+const AdminPage = () => {
+  return (
+    <>
             <Title title="Admin Panel" margin="24px 12px" />
             <Navbar links={links}/>
             <Outlet />
         </>
-    )
+  )
 }
+
+export default AdminPage
