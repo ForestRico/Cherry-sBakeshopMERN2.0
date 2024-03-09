@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const formSchema = new mongoose.Schema({
+    userID: String,
     email: String,
     occassion: String,
     first_name: String,
@@ -11,6 +12,6 @@ const formSchema = new mongoose.Schema({
     phone_number: String,
 });
 
-const Form = mongoose.model('Form', formSchema);
+const Forms = mongoose.model('Forms', formSchema);
 
-export default Form;
+export default Forms;

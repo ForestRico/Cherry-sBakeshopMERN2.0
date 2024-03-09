@@ -30,7 +30,7 @@ app.use(cors({
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
-app.use('/order', formRouter);
+app.use('/api/forms', formRouter);
 
 
 const PORT = 5000;
