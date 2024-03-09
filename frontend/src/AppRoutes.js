@@ -4,8 +4,8 @@ import FoodPage from "./pages/Food/FoodPage";
 import CartPage from "./pages/Cart/CartPage";
 // import LoginPage from './pages/Login/LoginPage';
 import FormPage from "./pages/Form/FormPage";
-import AdminPage from "./pages/Admin/AdminPage";
 import FormsList from "./components/FormsList/FormsList";
+import AdminPage from "./pages/Admin/AdminPage";
 // import OrderPage from './pages/Form/OrderPage';
 
 export default function AppRoutes() {
@@ -21,8 +21,8 @@ export default function AppRoutes() {
       <Route path="/form" element={<FormPage />} />
       {/* <Route path="/order" element={<OrderPage/>} />     */}
       <Route path="/admin" element={<AdminPage />}>
-          <Route index element={<FormsList />} />
-        </Route>
+        <Route index element={<FormsList />} />
+      </Route>
     </Routes>
   );
 }

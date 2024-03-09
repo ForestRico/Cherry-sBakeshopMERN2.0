@@ -11,7 +11,7 @@ const AdminPage = () => {
   return (
     <>
             <Title title="Admin Panel" margin="24px 12px" />
-            <Navbar links={links}/>
+            {/* <Navbar links={links}/> */}
             <Outlet />
         </>
   )
