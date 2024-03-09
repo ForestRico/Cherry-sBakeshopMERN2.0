@@ -6,7 +6,6 @@ import formRouter from './routers/form.router.js';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose'
 import connectDB from '../config/dbConn.js';
-// const connectDB = require('../config/dbConn.js').default;
 
 
 
@@ -33,11 +32,6 @@ app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/order', formRouter);
 
-
-// const PORT = 5000;
-// app.listen(PORT, () => {
-//     console.log('listening on port' + PORT);
-// });
 
 const PORT = 5000;
 mongoose.connection.once('open', () => {

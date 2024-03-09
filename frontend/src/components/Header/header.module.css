@@ -1,5 +1,11 @@
 /* C the color from .header --> .header a:hover to purple mixes  */
 
+.logo-img {
+    width: 25px; 
+    height: auto; 
+
+}
+
 .header {
     background: white;
     padding: 0;

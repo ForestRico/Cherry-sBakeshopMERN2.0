@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import connectDB from '../config/dbConn.js';
-import Form from '../models/formSchema.js';
+import Form from '../models/formSchema.js/index.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

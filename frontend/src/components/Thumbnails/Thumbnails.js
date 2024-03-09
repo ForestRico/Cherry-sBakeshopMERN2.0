@@ -25,7 +25,7 @@ export default function Thumbnails({ foods }) {
                   food.favorite ? '' : classes.not
                 }`}
               >
-                ❤
+                
               </span>
               <div className={classes.product_item_footer}>
                 <div className={classes.ingredients}>

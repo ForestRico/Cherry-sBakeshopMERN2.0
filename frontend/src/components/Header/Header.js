@@ -12,7 +12,7 @@ export default function Header() {
         <header className={classes.header}>
             <div className={classes.container}>
                 <Link to="/" className={classes.logo}>
-                    Cherry's Bakeshop
+                    <img src="/logo/logo.jpg" alt="Cherry's Bakeshop Logo" className="logo-img" />
                 </Link>
                 <nav>
                     <ul>
