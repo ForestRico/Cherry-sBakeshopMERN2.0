@@ -1,38 +1,18 @@
-import { model, Schema } from 'mongoose';
+import mongoose from "mongoose";
 
-// OLD SYNTAX
-// export const userSchema = new Schema({
-//     username: {
-//         type: String,
-//         required: true
-//     },
-//     password: {
-//         type: String,
-//         required: true
-//     },
-//     roles: [{
-//         type: String,
-//         default: "Employee"
-//     }],
-//     active: {
-//         type: Boolean,
-//         default: true
-//     },
-// })
-
-// module.exports = mongoose.model('User', userSchema)
-
-const userSchema = new Schema({
-    username: String,
-    password: String,
-    roles: [{
-        type: String,
-        default: "Employee"
-    }],
-    active: {
-        type: Boolean,
-        default: true
-    },
+const usersSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+  role: {
+    type: String,
+    default: "Customer",
+  },
+  active: {
+    type: Boolean,
+    default: true,
+  },
 });
 
-export { userSchema };
+const Users = mongoose.model("Users", usersSchema);
+
+export default Users;
