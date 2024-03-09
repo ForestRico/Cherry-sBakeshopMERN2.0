@@ -1,40 +1,31 @@
 import { Router } from 'express';
 import express from 'express';
-import Form from '../../models/formSchema.js';
+import Form from '../models/Form.js';
 
 
 const router = Router();
 
-// app.use('/form', formRouter);
+router.get('/', async (req, res) => {
+    try {
+        // Create a new form instance
+        const forms = await Form.find()
+        res.send(forms);
 
-// app.get('/', (req,res) => {
-//     res.status(200).send('<h1>hi<h1>')
-// })
-
-// router.post('/order', async (req, res) => {
-//     try {
-//         // Extract form data from the request body
-//         const formData = req.body;
-
-//         // Log the received data
-//         console.log('Data received:', formData);
-
-//         // Respond with a success message
-//         res.status(200).send('Data received successfully');
-//     } catch (error) {
-//         // Handle any errors and respond with an error message
-//         console.error('Error receiving data:', error);
-//         res.status(500).send('Failed to receive data');
-//     }
-// });
+    } catch (error) {
+        // Handle any errors and respond with an error message
+        console.error('Error submitting form:', error);
+        res.status(500).json({ success: false, message: 'Failed To Submit Form' });
+    }
+});
 
 router.post('/', async (req, res) => {
     try {
         // Extract form data from the request body
-        const { email, address, occasion, firstName, lastName, message, pickUpDate, pickUpTime, phoneNumber } = req.body;
+        const { userID, email, address, occasion, firstName, lastName, message, pickUpDate, pickUpTime, phoneNumber } = req.body;
 
         // Create a new form instance
         const form = new Form({
+            userID,
             email,
             address,
             occasion,
@@ -43,7 +34,7 @@ router.post('/', async (req, res) => {
             message,
             pickup_date: pickUpDate,
             pickup_time: pickUpTime,
-            phone_number: phoneNumber
+            phone_number: phoneNumber,
         });
 
         // Save the form to the database
@@ -58,5 +49,36 @@ router.post('/', async (req, res) => {
     }
 });
 
-// module.exports = router;
+router.delete('/', async (req, res) => {
+    try {
+
+        const {formID} = req.body
+
+        // Delete Form
+        const forms = await Form.findOneAndDelete({ _id: formID })
+        res.send({deleted: true, form: forms})
+        
+    } catch (error) {
+        // Handle any errors and respond with an error message
+        console.error('Error submitting form:', error);
+        res.status(500).json({ success: false, message: 'Failed To Submit Form' });
+    }
+});
+
+router.put('/', async (req, res) => {
+    try {
+
+        const {id} = req.body
+
+        // Delete Form
+        const forms = await Form.findOneAndUpdate({ _id: id }, {...req.body})
+        res.send({updated: true, form: forms})
+        
+    } catch (error) {
+        // Handle any errors and respond with an error message
+        console.error('Error submitting form:', error);
+        res.status(500).json({ success: false, message: 'Failed To Submit Form' });
+    }
+});
+
 export default router;
