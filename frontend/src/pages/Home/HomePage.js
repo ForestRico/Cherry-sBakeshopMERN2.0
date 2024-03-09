@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import Search from '../../components/Search/Search';
 import Tags from '../../components/Tags/Tags';
 import NotFound from '../../components/NotFound/NotFound';
+import classes from "./homePage.module.css"
 
 
 // The `initialState` variable is an object with a `foods` property set to an empty array. This represents the initial state of our component.
@@ -52,6 +53,10 @@ export default function HomePage() {
 
   return (
   <>
+    <div className={classes.imgMain}>
+      <img src="/cafe/cafe1.jpg" />
+      <img src="/cafe/cafe2.jpg" />
+    </div>
     <Search />
     <Tags tags={tags} />
 {/* This line conditionally renders a component called <NotFound /> if the length of the foods array is equal to 0 (i.e., there are no search results) */}

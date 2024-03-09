@@ -12,7 +12,7 @@ export default function Header() {
         <header className={classes.header}>
             <div className={classes.container}>
                 <Link to="/" className={classes.logo}>
-                    <img src="/logo/logo.jpg" alt="Cherry's Bakeshop Logo" className="logo-img" />
+                    <img src="/logo/logo.jpg" alt="Cherry's Bakeshop Logo" className={classes.logoimg} />
                 </Link>
                 <nav>
                     <ul>
@@ -23,7 +23,7 @@ export default function Header() {
                             <Link to="/faq">FAQ</Link>
                         </li>
                         <li>
-                            <Link to="/log in">Log In</Link>
+                            <Link to="/login">Log In</Link>
                         </li>
                         <li>
                             <Link to="/cart">
