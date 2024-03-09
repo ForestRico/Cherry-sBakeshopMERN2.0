@@ -21,25 +21,24 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         // Extract form data from the request body
-        const { userID, email, address, occasion, firstName, lastName, message, pickUpDate, pickUpTime, phoneNumber } = req.body;
-
+        const { userID, email, occasion, first_name, last_name, message, pickup_date, pickup_time, phone_number } = req.body;
+        console.log(req.body);
         // Create a new form instance
         const form = new Form({
             userID,
             email,
-            address,
             occasion,
-            first_name: firstName,
-            last_name: lastName,
+            first_name,
+            last_name,
             message,
-            pickup_date: pickUpDate,
-            pickup_time: pickUpTime,
-            phone_number: phoneNumber,
+            pickup_date,
+            pickup_time,
+            phone_number,
         });
 
         // Save the form to the database
         const savedForm = await form.save();
-
+        // console.log(savedForm);
         // Respond with a success message and the saved form
         res.status(201).json({ success: true, message: 'Your Form Was Submitted Successfully', form: savedForm });
     } catch (error) {
@@ -52,12 +51,12 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const {id} = req.params
-
+    
         // Delete Form
         const form = await Form.findOneAndDelete({ _id: id })
-
+        
         res.send({deleted: true, form: form})
-
+        
     } catch (error) {
         // Handle any errors and respond with an error message
         console.error('Error submitting form:', error);
