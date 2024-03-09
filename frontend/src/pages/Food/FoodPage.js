@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import classes from './foodPage.module.css'
 import { useNavigate, useParams } from "react-router-dom";
 import { getByID } from "../../services/foodService";
-import StarRating from "../../components/StarRating/StarRating";
 import Tags from "../../components/Tags/Tags";
 import Price from "../../components/Price/Price";
 import { useCart } from "../../hooks/useCart";
@@ -47,9 +46,7 @@ export default function FoodPage() {
                             ❤️
                         </span>
                     </div>
-                        <div className={classes.rating}>
-                            <StarRating stars={food.stars} size={25} />
-                        </div>
+
 
                         <div className={classes.origins}>
                             {food.ingredients?.map(ingredients => ( 

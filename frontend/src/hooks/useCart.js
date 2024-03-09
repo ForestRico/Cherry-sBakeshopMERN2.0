@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-// **** REVISE THIS CODE *****
+
 const CartContext = createContext(null);
 const CART_KEY = 'cart';  // defines a constant 'CART_KEY' with the value 'cart' which will be used as the key for storing the cart data in the browsers local storage
 const EMPTY_CART = { // Defines an object 'EMPTY_CART' with properties for items, total price and total count.
@@ -14,13 +14,14 @@ export default function CartProvider({ children }) {
     const [cartItems, setCartItems] = useState(initCart.items);
     const [totalPrice, setTotalPrice] = useState(initCart.totalPrice);
     const [totalCount, setTotalCount] = useState(initCart.totalCount);
-// **** REVISE CODE *****
+// utilsing useEffect here to calculate aggreagte price and quantity of items within shopping cart, the updates the state variables 'totaPrice' and 'totalCount'
     useEffect(() => {
       const totalPrice = sum(cartItems.map(item => item.price));
       const totalCount = sum(cartItems.map(item => item.quantity));
       setTotalPrice(totalPrice);
       setTotalCount(totalCount);
-// ***** REVISE CODE HERE 2:06:48 ****
+// updates shopping cart data stored in teh local storage with the current 'cartItems', 'totalPrice' and 'totalCount' whenver 'cartItems' changes.
+// helper func 'getCartFromLocalStorage' retrieves cart data from local storage and 'sum' for calculating the sum of items in the array.
       localStorage.setItem(CART_KEY, JSON.stringify({ items: cartItems, totalPrice, totalCount,}));
     }, [cartItems]);
 
@@ -48,7 +49,7 @@ export default function CartProvider({ children }) {
       quantity: newQuantity,
       price: food.price * newQuantity,
     };
-// ***** REVISE CODE ******
+// 'addToCart funcion adds food items to 'cartItems' by eihter incrementing the quantity of of an existing item or adding a new item with a quantity of 1 and the food's price if it doesnt already exist.
     setCartItems(
       cartItems.map(item => item.food.id === food.id? changedCartItem : item)
     );

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import express from 'express';
-import Form from '../models/Form.js';
+import Form from '../../models/formSchema.js'
 
 
 const router = Router();

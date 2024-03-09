@@ -19,7 +19,7 @@ Changes According to Client (Family)
 
 
 BackEnd Notes: 
-* Add Middleware? for MongoDB
+
 
 MongoDB: 
 

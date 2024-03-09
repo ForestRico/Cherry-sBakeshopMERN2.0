@@ -26,7 +26,6 @@ export default function HomePage() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { foods, tags } = state;
   const { searchTerm, tag } = useParams();
-  // ***** EXPLANATION REQUIRED HERE *****
 
 // The `useEffect` hook is used to perform side effects in the component. In this case, it fetches data asynchronously using the `getAll` function (not defined in the provided code) when the component mounts (`[]` dependency array indicates it should only run once). Once the data is fetched, it dispatches a 'FOODS_LOADED' action with the fetched foods as the payload.
 // The component returns a simple JSX element `<div>HomePage</div>`. 
@@ -55,7 +54,7 @@ export default function HomePage() {
   <>
     <Search />
     <Tags tags={tags} />
-  {/* ***** REVISE THIS *****  */}
+{/* This line conditionally renders a component called <NotFound /> if the length of the foods array is equal to 0 (i.e., there are no search results) */}
     {foods.length === 0 && <NotFound linkText="Reset Search" />} 
     <Thumbnails foods={foods} />
   </>

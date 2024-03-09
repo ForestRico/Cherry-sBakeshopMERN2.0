@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./thumbnails.module.css";
-import StarRating from "../StarRating/StarRating";
+
 import Price from "../Price/Price";
 // PropTypes help catch errors related to incorrect proptypes or missing props.
 // import PropTypes from "prop-types";
@@ -27,9 +27,6 @@ export default function Thumbnails({ foods }) {
               >
                 ❤
               </span>
-              <div className={classes.stars}>
-                <StarRating stars={food.stars} />
-              </div>
               <div className={classes.product_item_footer}>
                 <div className={classes.ingredients}>
                   {food.ingredients.map(origin => (

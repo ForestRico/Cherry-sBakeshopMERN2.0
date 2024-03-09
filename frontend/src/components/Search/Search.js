@@ -7,7 +7,7 @@ export default function Search() {
     const [term, setTerm] = useState('');
     const navigate = useNavigate();
     const { searchTerm } = useParams();
-// ***** REVISE THIS CODE *****
+
     useEffect(() => {
         setTerm(searchTerm ?? '');
     }, [searchTerm]);
