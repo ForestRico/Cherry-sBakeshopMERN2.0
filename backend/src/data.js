@@ -158,14 +158,14 @@ export const sample_foods = [
 ];
 
 export const sample_tags = [
-    {name: 'All', count: 14},
-    {name: 'Cakes', count: 3},
-    {name: 'Cupcakes', count: 3},
-    {name: 'Bread', count: 3},
-    {name: 'Dessert', count: 9},
-    {name: 'Cold Food', count: 9},
-    {name: 'Lunch', count: 4},
-    {name: 'Hot Food', count: 4},
+    {name: 'All'},
+    {name: 'Cakes'},
+    {name: 'Cupcakes'},
+    {name: 'Bread'},
+    {name: 'Dessert'},
+    {name: 'Cold Food'},
+    {name: 'Lunch'},
+    {name: 'Hot Food'},
 ];
 
 export const sample_user = [

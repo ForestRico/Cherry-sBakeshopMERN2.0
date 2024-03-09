@@ -10,7 +10,7 @@
   .list li a {
     height: 22.5rem;
     width: 20rem;
-    border: 3px solid #5829e7;
+    border: 3px solid black;
     border-radius: 1rem;
     margin: 0.5rem;
     display: flex;
@@ -40,13 +40,6 @@
     font-size: 1.2rem;
   }
   
-  .favorite.not {
-    color: grey;
-  }
-  
-  .stars {
-    margin: 0.5rem 0;
-  }
   
   /* marginalising the stars  */
   .product_item_footer {
@@ -57,10 +50,10 @@
   
   .ingredients span {
     border-radius: 2rem;
-    background-color: whitesmoke;
+    background-color: rgb(230, 230, 230);
     display: inline-block;
     font-size: 0.8rem;
-    color: grey;
+    color: rgb(0, 0, 0);
     margin-right: 0.3rem;
     padding: 0 0.5rem;
     margin-top: 0.2rem;
