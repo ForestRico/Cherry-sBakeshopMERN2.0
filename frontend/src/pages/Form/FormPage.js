@@ -27,8 +27,8 @@ export default function FormPage() {
         // e.preventDefault();
         try {
             // Send form data to the backend
-            console.log("Sending request to:", "/order");
-            const response = await axios.post("/order", formData);
+            console.log("Sending request to:", "/api/forms");
+            const response = await axios.post("/api/forms", formData);
             console.log(response.data);
             // Display confirmation message or redirect to a thank you page
         } catch (error) {
