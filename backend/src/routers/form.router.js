@@ -49,15 +49,15 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-
-        const {formID} = req.body
+        const {id} = req.params
 
         // Delete Form
-        const forms = await Form.findOneAndDelete({ _id: formID })
-        res.send({deleted: true, form: forms})
-        
+        const form = await Form.findOneAndDelete({ _id: id })
+
+        res.send({deleted: true, form: form})
+
     } catch (error) {
         // Handle any errors and respond with an error message
         console.error('Error submitting form:', error);
