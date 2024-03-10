@@ -40,6 +40,17 @@ const FormsList = () => {
                 <p><b>pickup_date</b>: {form.pickup_date ? form.pickup_date : "empty"}</p>
                 <p><b>pickup_time</b>: {form.pickup_time ? form.pickup_time : "empty"}</p>
                 <p><b>phone_number</b>: {form.phone_number ? form.phone_number : "empty"}</p>
+                <h4>---------Products---------</h4>
+                <div>
+                  {form.products?.map((val => <div>
+                    <p><b>Food</b>: {val.name ? val.name : "empty"}</p>
+                    <p><b>Price</b>: {val.price ? val.price : "empty"}</p>
+                  </div>))}
+                  <h4>---------Bill---------</h4>
+                    <p><b>Total Price</b>: {form.total ? form.total : "empty"}</p>
+                    <p><b>Quantity</b>: {form.quantity ? form.quantity : "empty"}</p>
+
+                </div>
             </div>
             <div className={classes.formsListBoxButtons}>
                 <button>Update</button>

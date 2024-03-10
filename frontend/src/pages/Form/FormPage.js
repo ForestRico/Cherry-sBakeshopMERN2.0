@@ -28,7 +28,7 @@ export default function FormPage() {
         try {
             // Send form data to the backend
             console.log("Sending request to:", "/api/forms");
-            const response = await axios.post("/api/forms", formData);
+            const response = await axios.post("/api/forms", {formData: formData, products: cart});
             console.log(response.data);
             // Display confirmation message or redirect to a thank you page
         } catch (error) {
