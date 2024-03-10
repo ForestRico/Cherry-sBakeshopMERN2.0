@@ -1,6 +1,14 @@
 # Laurence Rico T2A3-B Project : Bakery Website Fullstack MERN
 This MERN application empowers customers of our family bakeshop to effortlessly browse, place orders, and submit customized quote requests for their food preferences. It serves as an intuitive solution for establishing our bakery's online presence. Through the app, customers gain access to our wide range of available foods, enabling them to place orders and provide specific preferences directly visible to our admins and culinary team. This streamlined process eliminates the need for tedious phone calls to discuss menu options and simplifies order management. Admins have full visibility of all client submissions, facilitating efficient order tracking and management.
 
+## Main Repository
+
+## Frontend Deployment
+
+## Backend Deployment
+
+https://master--fluffy-bonbon-909479.netlify.app/
+
 ## Admin Login Details
 
 email: admin@gmail.com
@@ -13,8 +21,13 @@ password: 123
 * Online payment not neccessary, pick-up only.
 * Rationale : Since we're still a small business parents have decided to keep things simple for now. Setting up online payments requires extra technical infrastructure and resources that we're not quite ready for yet. So, for now, we're sticking with pick-up only. I'll certainly consider online payments down the road, but for now, let's stick to the basics. After all, I'm still getting the hang of things, so I'll need some time to get up to speed.
 
-* Order/Quote based system other than online payment/delivery
+* Order/Quote based system as oppposed to online payment/delivery
 * Family wants to include a section where customers can place orders for multiple food items and send a quote request directly to the admins, providing all necessary details. This allows the admins to review the order, make any necessary adjustments, and contact customers via phone for further communication or changes. This will be the primary function of the website/app.
+
+## Task Delegation Methology (Solo)
+* My biggest weakness in this project was being overly ambitious at the beginning, aiming to implement online payment capabilities, email confirmation functionalities, and integration with the Goolge Maps API. Time was my biggest contraint and managing all aspects of development proved to be a lot more frustrating and time-consuming than anticipted. Particularly when it came to debugging, testing and deploying. Moving forward, I understand the importance of setting more feasible goals, prioritizing critical features, and incorporating comprehensive testing protocols from the project's inception to enhance future projects' efficiency and reliability.
+
+![Photo of trello board](docs/trello%20board.png)
 
 
 ## Pending Changes 
