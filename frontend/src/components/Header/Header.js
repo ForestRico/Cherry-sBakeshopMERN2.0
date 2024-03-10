@@ -14,12 +14,12 @@ export default function Header() {
                 </Link>
                 <nav>
                     <ul>
-                        <li>
+                        {/* <li>
                             <Link to="/about us">About Us</Link>
                         </li>
                         <li>
                             <Link to="/faq">FAQ</Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link to="/login">Log In</Link>
                         </li>
