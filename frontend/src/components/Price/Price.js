@@ -9,7 +9,7 @@ export default function Price({ price, locale, currency }) {
         }).format(price);
 
         // Prepend dollar sign to the formatted price
-        return `${formattedPrice}`;
+        return formattedPrice;
     };
 
     return <span>{formatPrice()}</span>;

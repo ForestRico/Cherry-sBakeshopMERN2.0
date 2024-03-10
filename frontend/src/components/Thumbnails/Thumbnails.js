@@ -35,7 +35,7 @@ export default function Thumbnails({ foods }) {
                 </div>
                 <div className={classes.cook_time}>
                   <span>⏰</span>
-                  {food.cookTime}
+                  {food.cookTime} minutes prep time
                 </div>
               </div>
               <div className={classes.price}>

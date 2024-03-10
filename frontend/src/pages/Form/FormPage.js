@@ -54,13 +54,13 @@ export default function FormPage() {
                                     Quantity: {item.quantity}
                                 </div>
                                 <div className={classes.food_count_total}>
-                                    Total: $<Price price={item.price} />
+                                    Total: <Price price={item.price} />
                                 </div>
                             </li>
                         ))}
                         <li>
                             <div className={classes.food_total_price}>
-                                Total Price: $<Price price={cart.totalPrice} />
+                                Total Price: <Price price={cart.totalPrice} />
                             </div>
                         </li>
                     </ul>

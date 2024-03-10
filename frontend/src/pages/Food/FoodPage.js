@@ -38,13 +38,6 @@ export default function FoodPage() {
                 <div className={classes.details}>
                     <div className={classes.header}>
                         <span className={classes.name}>{food.name}</span>
-                        <span
-                            className={`${classes.favourite}} ${
-                                food.favourite ? '' : classes.not
-                            }`}
-                        >
-                            ❤️
-                        </span>
                     </div>
 
 

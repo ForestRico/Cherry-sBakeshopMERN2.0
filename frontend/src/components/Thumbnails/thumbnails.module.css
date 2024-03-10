@@ -16,11 +16,9 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    color: #5829e7;
+    color: black;
+    font-weight: 1500;
   }
-
-
-  /* 45:07 fix overflow and display flex problem  */
 
   .image {
     object-fit: cover;
@@ -34,21 +32,12 @@
     height: 7rem;
   }
   
-  .favorite {
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    font-size: 1.2rem;
-  }
-  
-  
-  /* marginalising the stars  */
-  .product_item_footer {
+  /* .product_item_footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
-  
+   */
   .ingredients span {
     border-radius: 2rem;
     background-color: rgb(230, 230, 230);
@@ -72,12 +61,10 @@
   
   .price {
     position: absolute;
-    bottom: 0;
-    left: 14.5rem;
-    background-color: white;
-    padding: 0.3rem 100% 0 0;
+    left: 14.0rem;
     color: green;
     margin-top: 0.7rem;
     font-size: 1.1rem;
+    font-weight: bold;
   }
   

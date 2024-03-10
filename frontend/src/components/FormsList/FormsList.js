@@ -42,13 +42,14 @@ const FormsList = () => {
                 <p><b>phone_number</b>: {form.phone_number ? form.phone_number : "empty"}</p>
                 <h4>---------Products---------</h4>
                 <div>
-                  {form.products?.map((val => <div>
+                  {form.products?.map((val => <div style={{margin: '12px'}}>
                     <p><b>Food</b>: {val.name ? val.name : "empty"}</p>
                     <p><b>Price</b>: {val.price ? val.price : "empty"}</p>
+                    <p><b>Quantity</b>: {val.quantity ? val.quantity : "empty"}</p>
                   </div>))}
                   <h4>---------Bill---------</h4>
                     <p><b>Total Price</b>: {form.total ? form.total : "empty"}</p>
-                    <p><b>Quantity</b>: {form.quantity ? form.quantity : "empty"}</p>
+                    <p><b>Total Quantity</b>: {form.quantity ? form.quantity : "empty"}</p>
 
                 </div>
             </div>
