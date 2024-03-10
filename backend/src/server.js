@@ -20,11 +20,13 @@ const app = express();
 // Since we're using 'req.body' and want to send our data to the server as JSON, we need to tell express to use JSON as the body
 // This code parses JSON body
 app.use(express.json());
-app.use(cors({
-    credentials:true,
-    origin: ['http://localhost:3000', 'https://master--fluffy-bonbon-909479.netlify.app/'],
-})
+app.use(cors(
+
+)
 );
+
+// credentials:true,
+// origin: ['http://localhost:3000', 'https://65ed9b2121e97b00089752fa--fluffy-bonbon-909479.netlify.app'],
 
 // Front end is already running on port3000, backend must run on a separate port (5000)
 
@@ -42,7 +44,7 @@ mongoose.connection.once('open', () => {
 mongoose.connection.on('error', err => {
     console.log(err)
     logEvents(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`,
-    'mongoErrLog.log')
+        'mongoErrLog.log')
 })
 
-export { app }
+export default app

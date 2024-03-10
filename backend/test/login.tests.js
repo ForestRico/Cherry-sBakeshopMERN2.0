@@ -19,5 +19,3 @@ describe("User API", () => {
     });
   });
 });
-
-export { app }

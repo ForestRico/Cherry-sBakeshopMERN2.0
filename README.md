@@ -1,13 +1,12 @@
 # Laurence Rico T2A3-B Project : Bakery Website Fullstack MERN
 This MERN application empowers customers of our family bakeshop to effortlessly browse, place orders, and submit customized quote requests for their food preferences. It serves as an intuitive solution for establishing our bakery's online presence. Through the app, customers gain access to our wide range of available foods, enabling them to place orders and provide specific preferences directly visible to our admins and culinary team. This streamlined process eliminates the need for tedious phone calls to discuss menu options and simplifies order management. Admins have full visibility of all client submissions, facilitating efficient order tracking and management.
 
-## Main Repository
 
-## Frontend Deployment
+## __Links__ : 
+### [Link Main Repository](https://github.com/ForestRico/Cherry-sBakeshopMERN2.0) 
+### [Link to Website/App](https://cherrysbakeshop-frontend.vercel.app/)
+### [Link to Backend/API](https://cherrysbakeshop-backend.vercel.app)
 
-## Backend Deployment
-
-https://master--fluffy-bonbon-909479.netlify.app/
 
 ## Admin Login Details
 

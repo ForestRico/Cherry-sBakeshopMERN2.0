@@ -20,17 +20,14 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
+        console.log(req.body);
         // Extract form data from the request body
         const { userID, email, occasion, first_name, last_name, message, pickup_date, pickup_time, phone_number } = req.body.formData;
         const {totalCount, totalPrice} = req.body.products
         const Foods = [];
         req.body.products.items.forEach(product => {
-            const tempFood = product.food;
-            tempFood.quantity = product.quantity;
-            Foods.push(tempFood);
+            Foods.push(product.food)
         })
-
-        console.log(Foods)
 
         // Create a new form instance
         const form = new Form({
