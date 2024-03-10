@@ -48,7 +48,7 @@ export default function FoodPage() {
                     </div>
 
 
-                        <div className={classes.origins}>
+                        <div className={classes.ingredients}>
                             {food.ingredients?.map(ingredients => ( 
                                 <span key={ingredients}>{ingredients}</span>
                             ))}
