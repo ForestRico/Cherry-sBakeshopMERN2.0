@@ -12,8 +12,9 @@
   }
   
   .image {
-    border-radius: 3rem;
-    flex: 1 0;
+    /* border-radius: 3rem; */
+    border: 0.5px solid black;
+    box-shadow: 5px 10px #888888;
     object-fit: cover;
     height: 35rem;
     margin: 1rem;
